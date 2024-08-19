@@ -15,7 +15,7 @@ GAIndividual GAIndividual::crossover(GAIndividual a, GAIndividual b, int positio
 
 
 void GAIndividual::updateFitness() {
-    m_fitness = calcFitness();
+    m_fitness = calcFitness(m_graph, m_split);
 }
 
 long long GAIndividual::getFitness() {
@@ -30,11 +30,11 @@ void GAIndividual::mutate() {
     }
 }
 
-long long GAIndividual::calcFitness() {
+long long GAIndividual::calcFitness(Graph* g, std::vector<int> split) {
     long long fitness = 0;
-    std::vector<Graph::Edge> edges = m_graph->getEdges();
+    std::vector<Graph::Edge> edges = g->getEdges();
     for (auto edge : edges) {
-        if (m_split[edge.src] != m_split[edge.dst]) {
+        if (split[edge.src] != split[edge.dst]) {
             fitness += edge.w;
         }
     }
