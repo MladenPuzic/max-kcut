@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "GeneticAlgorithm.h"
+#include "BruteForce.h"
 #include "Graph.h"
 
 using namespace std;
@@ -15,6 +16,8 @@ int main() {
         g.addEdge(x, y, w);
     }
     GeneticAlgorithm ga(k, &g);
-    cout << ga.run(100, 10, 7, 10, 0.05);
+    BruteForce bf(k, &g);
+    cout << ga.run(100, 10, 7, 10, 0.05) << endl;
+    cout << bf.run();
     return 0;
 }

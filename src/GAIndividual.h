@@ -33,8 +33,8 @@ public:
     void updateFitness();
     long long getFitness();
     void mutate();
+    static long long calcFitness(Graph* g, std::vector<int> split);
 private:
-    long long calcFitness();
     long long m_fitness;
     int m_groups;
     double m_mutationProb;
