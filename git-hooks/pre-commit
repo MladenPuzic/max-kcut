@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+import os
+import sys
+import subprocess
+
+# Set the maximum file size (in bytes)
+MAX_SIZE = 1024 * 1024 # 1 MB
+
+def get_staged_files():
+    # Get a list of staged files
+    result = subprocess.run(['git', 'diff', '--cached', '--name-only'], stdout=subprocess.PIPE)
+    return result.stdout.decode('utf-8').splitlines()
+
+def check_file_size(file_path):
+    # Check the size of a file
+    file_size = os.path.getsize(file_path)
+    return file_size > MAX_SIZE, file_size
+
+staged_files = get_staged_files()
+
+for file in staged_files:
+    if os.path.isfile(file):
+        is_too_large, size = check_file_size(file)
+        if is_too_large:
+            print(f"Error: '{file}' is too large ({size} bytes). Max size is {MAX_SIZE} bytes.")
+            sys.exit(1)
+    
+    print("All files are within the size limit.")
