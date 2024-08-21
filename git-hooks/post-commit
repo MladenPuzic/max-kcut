@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+import requests
+import datetime
+
+def get_date_fact(day, month):
+    # Fetch a fact from NumbersAPI based on today's date
+
+    url = f"http://numbersapi.com/{month}/{day}/date"
+    response = requests.get(url)
+    
+    if response.status_code == 200:
+        return response.text
+    else:
+        return None
+
+today = datetime.datetime.now()
+month = today.month
+day = today.day
+
+fact = get_date_fact(day, month)
+
+if fact != None:
+    print(f"\n A Fact for Today ({month}/{day}):\n{fact}\n")

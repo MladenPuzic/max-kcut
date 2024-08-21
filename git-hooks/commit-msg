@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+import sys
+import re
+
+# Define the pirate speak replacements
+pirate_translations = {
+    r'\bfix\b': 'patch up',
+    r'\bbug\b': 'scallywag',
+    r'\badd\b': 'bring aboard',
+    r'\bremove\b': 'walk the plank with',
+    r'\bfeature\b': 'treasure',
+    r'\bupdate\b': 'hoist the sails on',
+    r'\berror\b': 'blunder',
+    r'\bdeploy\b': 'set sail',
+    r'\bcommit\b': 'swear an oath'
+}
+
+def translate_to_pirate_speak(text):
+    # Translate text to pirate speak based on predefined translations
+    for pattern, replacement in pirate_translations.items():
+        text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
+    return text
+
+# The commit message file is passed as the first argument
+commit_msg_file = sys.argv[1]
+
+# Read the commit message
+with open(commit_msg_file, 'r') as file:
+    commit_msg = file.read()
+
+# Translate the commit message to pirate speak
+pirate_msg = translate_to_pirate_speak(commit_msg)
+
+# Write the translated commit message back to the file
+with open(commit_msg_file, 'w') as file:
+    file.write(pirate_msg)
+
+print("Yarr! Yer commit message be now in pirate speak!")
