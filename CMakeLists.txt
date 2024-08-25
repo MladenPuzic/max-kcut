@@ -13,4 +13,6 @@ add_executable(max_kcut src/main.cpp
         src/BruteForce.cpp
         src/BruteForce.h
         src/Greedy.cpp
-        src/Greedy.h)
+        src/Greedy.h
+        src/SimmulatedAnnealing.cpp
+        src/SimmulatedAnnealing.h)

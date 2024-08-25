@@ -18,7 +18,7 @@ public:
 private:
     void checkAllOptions(int idx);
     int m_groups;
-    int m_score;
+    long long m_score;
     std::vector<int> m_split;
     std::vector<int> m_optimal;
     Graph* m_graph;
