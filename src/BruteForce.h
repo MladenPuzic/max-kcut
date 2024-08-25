@@ -6,10 +6,11 @@
 #define BRUTEFORCE_H
 
 #include "Graph.h"
+#include "Individual.h"
 
 class BruteForce {
 public:
-    BruteForce(int k, Graph *g = nullptr) {
+    BruteForce(int k = 1, Graph *g = nullptr) {
         m_groups = k;
         m_graph = g;
     }
@@ -18,12 +19,9 @@ public:
 private:
     void checkAllOptions(int idx);
     int m_groups;
-    int m_score;
-    std::vector<int> m_split;
-    std::vector<int> m_optimal;
+    Individual m_cur;
+    Individual m_opt;
     Graph* m_graph;
 };
-
-
 
 #endif //BRUTEFORCE_H

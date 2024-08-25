@@ -13,30 +13,13 @@ GAIndividual GAIndividual::crossover(GAIndividual a, GAIndividual b, int positio
     return child;
 }
 
-
-void GAIndividual::updateFitness() {
-    m_fitness = calcFitness(m_graph, m_split);
-}
-
-long long GAIndividual::getFitness() {
-    return m_fitness;
-}
-
 void GAIndividual::mutate() {
+    std::random_device rd;
+    std::mt19937 rnd(rd());
     for (int i = 0; i < m_split.size(); i++) {
-        if (m_doesMutate(m_rnd) <= m_mutationProb) {
-            m_split[i] = m_chooseGroup(m_rnd);
+        if (m_doesMutate(rnd) <= m_mutationProb) {
+            m_split[i] = m_chooseGroup(rnd);
         }
     }
-}
-
-long long GAIndividual::calcFitness(Graph* g, std::vector<int> split) {
-    long long fitness = 0;
-    std::vector<Graph::Edge> edges = g->getEdges();
-    for (auto edge : edges) {
-        if (split[edge.src] != split[edge.dst]) {
-            fitness += edge.w;
-        }
-    }
-    return fitness;
+    updateFitness();
 }
