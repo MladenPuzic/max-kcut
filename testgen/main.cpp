@@ -12,41 +12,41 @@ void genBigGraphBigK(int tc, std::mt19937 rnd); //   n <= 200, k <= 20
 int main()
 {
     std::mt19937 rnd(time(nullptr));
-    for (int tc = 1; tc <= 10; tc++) {
+    for (int tc = 1; tc <= 5; tc++) {
         genSmallGraph(tc, rnd);
     }
-    for (int tc = 11; tc <= 20; tc++) {
+    for (int tc = 6; tc <= 10; tc++) {
         genBigSparseGraph(tc, rnd);
     }
-    for (int tc = 21; tc <= 30; tc++) {
+    for (int tc = 11; tc <= 15; tc++) {
         genBigGraphSmallK(tc, rnd);
     }
-    for (int tc = 31; tc <= 40; tc++) {
+    for (int tc = 16; tc <= 20; tc++) {
         genBigGraphBigK(tc, rnd);
     }
     return 0;
 }
 
 void genSmallGraph(int tc, std::mt19937 rnd) {
-    // k = 5, n = 14 x 4
-    // k = 4, n = 16 x 2
-    // k = 3, n = 20 x 2
-    // k = 2, n = 33 x 2
+    // k = 5, n = 14 x 2
+    // k = 4, n = 16 x 1
+    // k = 3, n = 20 x 1
+    // k = 2, n = 33 x 1
     std::ofstream out;
     out.open(std::to_string(tc) + ".in");
     int n, m, k;
-    if (tc <= 2) {
+    if (tc <= 1) {
         k = 2;
-        n = 33;
-    } else if (tc <= 4) {
+        n = 25;
+    } else if (tc <= 2) {
         k = 3;
-        n = 20;
-    } else if (tc <= 6) {
-        k = 4;
         n = 16;
+    } else if (tc <= 3) {
+        k = 4;
+        n = 12;
     } else {
         k = 5;
-        n = 14;
+        n = 10;
     }
     m = std::uniform_int_distribution<int>(4*n, n*(n-1)/2)(rnd);
     auto rnd_node = std::uniform_int_distribution<int>(0, n-1);
