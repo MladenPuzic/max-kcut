@@ -4,27 +4,23 @@
 
 #include "BruteForce.h"
 
-#include "GAIndividual.h"
-
 void BruteForce::checkAllOptions(int idx) {
-    if (idx == m_split.size()) {
-        int curScore = GAIndividual::calcFitness(m_graph, m_split);
-        if (curScore > m_score) {
-            m_score = curScore;
-            m_optimal = m_split;
+    if (idx == m_graph->getNodeCount()) {
+        long long curScore = m_cur.getFitness(true);
+        if (curScore > m_opt.getFitness()) {
+            m_opt = m_cur;
         }
-        return;// obrisi za bug
+        return;
     }
     for (int opt = 0; opt < m_groups; opt++) {
-        m_split[idx] = opt;
+        m_cur.m_split[idx] = opt;
         checkAllOptions(idx+1);
     }
 }
 
 long long BruteForce::run() {
-    m_split = std::vector<int>(m_graph->getNodeCount(), 0);
-    m_optimal = m_split;
-    m_score = 0;
+    m_cur = Individual(m_graph, m_groups, false);
+    m_opt = m_cur;
     checkAllOptions(0);
-    return m_score;
+    return m_opt.getFitness();
 }

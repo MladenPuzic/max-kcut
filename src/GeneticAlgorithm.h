@@ -17,7 +17,7 @@ public:
     }
 
     long long run(int populationSize, int numGenerations, int elitismSize, int tournamentSize, double mutationProb);
-    GAIndividual selection(std::vector<GAIndividual> population, int tournamentSize);
+    GAIndividual selection(std::vector<GAIndividual> &population, int tournamentSize, GAIndividual *excl = nullptr);
 private:
     static bool fitnessCmp(GAIndividual a, GAIndividual b);
     Graph *m_graph;

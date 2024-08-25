@@ -19,9 +19,7 @@ public:
     long long run(int iter);
 private:
     int m_groups;
-    long long m_score;
     std::mt19937 m_rnd;
-    std::vector<int> m_split;
     Graph* m_graph;
 };
 
