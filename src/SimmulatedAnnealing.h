@@ -1,24 +1,22 @@
 //
-// Created by Mladen Puzić on 17.8.24..
+// Created by Mladen Puzić on 24.8.24..
 //
 
-#ifndef GREEDY_H
-#define GREEDY_H
+#ifndef SIMMULATEDANNEALING_H
+#define SIMMULATEDANNEALING_H
 
 #include <random>
-
 #include "Graph.h"
 
-class Greedy {
+class SimmulatedAnnealing {
 public:
-    Greedy(int k, Graph *g = nullptr) {
+    SimmulatedAnnealing(int k, Graph *g = nullptr) {
         m_groups = k;
         m_graph = g;
         m_rnd.seed(time(nullptr));
     }
 
-    long long runFirstImprovement(int iter);
-    long long runBestImprovement(int iter);
+    long long run(int iter);
 private:
     int m_groups;
     long long m_score;
@@ -27,6 +25,4 @@ private:
     Graph* m_graph;
 };
 
-
-
-#endif //GREEDY_H
+#endif //SIMMULATEDANNEALING_H

@@ -40,3 +40,24 @@ long long GAIndividual::calcFitness(Graph* g, std::vector<int> split) {
     }
     return fitness;
 }
+
+std::vector<int> GAIndividual::randomSplit(int groups, int len) {
+    std::vector<int> split(len);
+    for (int i = 0; i < groups; i++) {
+        split[i] = i;
+    }
+    std::mt19937 rnd(time(nullptr));
+    for (int i = groups; i < len; i++) {
+        split[i] = std::uniform_int_distribution<int>(0, groups-1)(rnd);
+    }
+    std::shuffle(split.begin(), split.end(), rnd);
+    return split;
+}
+
+std::vector<int> GAIndividual::smallChange(std::vector<int> split, int groups, std::mt19937 rnd) {
+    int rnd_idx = std::uniform_int_distribution<int>(0, split.size()-1)(rnd);
+    int rnd_grp = std::uniform_int_distribution<int>(0, groups-1)(rnd);
+
+    split[rnd_idx] = rnd_grp;
+    return split;
+}
