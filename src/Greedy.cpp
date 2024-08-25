@@ -4,59 +4,58 @@
 
 #include "Greedy.h"
 
-#include "GAIndividual.h"
+#include "Individual.h"
 
 long long Greedy::runBestImprovement(int iter) {
-    m_split = GAIndividual::randomSplit(m_groups, m_graph->getNodeCount());
-    m_score = GAIndividual::calcFitness(m_graph, m_split);
-
+    Individual cur = Individual(m_graph, m_groups, true);
+    long long curFitness = cur.getFitness();
     bool improved = true;
     while (improved && iter--) {
         improved = false;
-        int mx_idx = 0, mx_grp = m_split[0];
-        for (int idx = 0; idx < m_split.size(); idx++) {
-            int st = m_split[idx];
+        int mx_idx = 0, mx_grp = cur.m_split[0];
+        for (int idx = 0; idx < m_graph->getNodeCount(); idx++) {
+            int st = cur.m_split[idx];
             for (int nw = 0; nw < m_groups; nw++) {
                 if (st != nw) {
-                    m_split[idx] = nw;
-                    long long nw_value = GAIndividual::calcFitness(m_graph, m_split);
-                    if (nw_value > m_score) {
-                        m_score = nw_value;
+                    cur.m_split[idx] = nw;
+                    long long nwFitness = cur.getFitness(true);
+                    if (nwFitness > curFitness) {
+                        curFitness = nwFitness;
                         mx_idx = idx;
                         mx_grp = nw;
                     }
                 }
             }
-            m_split[idx] = st;
+            cur.m_split[idx] = st;
         }
-        if (m_split[mx_idx] != mx_grp) {
-            m_split[mx_idx] = mx_grp;
+        if (cur.m_split[mx_idx] != mx_grp) {
+            cur.m_split[mx_idx] = mx_grp;
             improved = true;
         }
     }
-    return m_score;
+    return cur.getFitness(true);
 }
 
 long long Greedy::runFirstImprovement(int iter) {
-    m_split = GAIndividual::randomSplit(m_groups, m_graph->getNodeCount());
-    m_score = GAIndividual::calcFitness(m_graph, m_split);
-
+    Individual cur = Individual(m_graph, m_groups, true);
+    long long curFitness = cur.getFitness();
     bool improved = true;
     while (improved && iter--) {
         improved = false;
-        auto perm = std::vector<int>(m_split.size());
+        auto perm = std::vector<int>(m_graph->getNodeCount());
         for (int i = 0; i < perm.size(); i++) {
             perm[i] = i;
         }
         shuffle(perm.begin(), perm.end(), m_rnd);
+
         for (auto idx : perm) {
-            int st = m_split[idx];
+            int st = cur.m_split[idx];
             for (int nw = 0; nw < m_groups; nw++) {
                 if (st != nw) {
-                    m_split[idx] = nw;
-                    long long nw_value = GAIndividual::calcFitness(m_graph, m_split);
-                    if (nw_value > m_score) {
-                        m_score = nw_value;
+                    cur.m_split[idx] = nw;
+                    long long nwFitness = cur.getFitness(true);
+                    if (nwFitness > curFitness) {
+                        curFitness = nwFitness;
                         improved = true;
                         break;
                     }
@@ -65,9 +64,9 @@ long long Greedy::runFirstImprovement(int iter) {
             if (improved) {
                 break;
             }
-            m_split[idx] = st;
+            cur.m_split[idx] = st;
         }
     }
-    return m_score;
+    return cur.getFitness(true);
 }
 

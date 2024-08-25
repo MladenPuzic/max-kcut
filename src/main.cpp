@@ -24,6 +24,6 @@ int main() {
     cout << ga.run(200, 100, 20, 10, 0.05) << endl;
     cout << bf.run() << endl;
     cout << gd.runBestImprovement(1000) << ' ' << gd.runFirstImprovement(1000) << endl;
-    cout << sa.run(1000);
+    cout << sa.run(10000);
     return 0;
 }
