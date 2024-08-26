@@ -3,6 +3,7 @@
 //
 
 #include "Individual.h"
+#include <algorithm>
 
 long long Individual::getFitness(bool recalc) {
     if (recalc) {
