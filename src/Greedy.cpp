@@ -3,8 +3,8 @@
 //
 
 #include "Greedy.h"
-
 #include "Individual.h"
+#include <algorithm>
 
 long long Greedy::runBestImprovement(int iter) {
     Individual cur = Individual(m_graph, m_groups, true);
@@ -46,7 +46,7 @@ long long Greedy::runFirstImprovement(int iter) {
         for (int i = 0; i < perm.size(); i++) {
             perm[i] = i;
         }
-        shuffle(perm.begin(), perm.end(), m_rnd);
+        std::shuffle(perm.begin(), perm.end(), m_rnd);
 
         for (auto idx : perm) {
             int st = cur.m_split[idx];

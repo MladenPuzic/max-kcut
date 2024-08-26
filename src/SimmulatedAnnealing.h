@@ -13,7 +13,8 @@ public:
     SimmulatedAnnealing(int k, Graph *g = nullptr) {
         m_groups = k;
         m_graph = g;
-        m_rnd.seed(time(nullptr));
+        std::random_device rd;
+        m_rnd.seed(rd());
     }
 
     long long run(int iter);

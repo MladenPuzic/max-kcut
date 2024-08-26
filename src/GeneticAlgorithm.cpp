@@ -3,6 +3,7 @@
 //
 
 #include "GeneticAlgorithm.h"
+#include <algorithm>
 
 bool GeneticAlgorithm::fitnessCmp(GAIndividual a, GAIndividual b) {
     return a.getFitness() > b.getFitness();
