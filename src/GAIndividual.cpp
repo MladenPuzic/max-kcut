@@ -16,9 +16,9 @@ GAIndividual GAIndividual::crossover(GAIndividual a, GAIndividual b, int positio
 void GAIndividual::mutate() {
     std::random_device rd;
     std::mt19937 rnd(rd());
-    for (int i = 0; i < m_split.size(); i++) {
+    for (int & i : m_split) {
         if (m_doesMutate(rnd) <= m_mutationProb) {
-            m_split[i] = m_chooseGroup(rnd);
+            i = m_chooseGroup(rnd);
         }
     }
     updateFitness();
