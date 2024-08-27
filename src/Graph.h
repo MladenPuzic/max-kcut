@@ -8,10 +8,11 @@
 #include <vector>
 
 class Graph {
-public:
+   public:
     Graph(int nodeCount = 0) {
         m_nodeCount = nodeCount;
-        m_adj = std::vector<std::vector<int>>(m_nodeCount, std::vector<int>(m_nodeCount));
+        m_adj = std::vector<std::vector<int>>(m_nodeCount,
+                                              std::vector<int>(m_nodeCount));
     }
     struct Edge {
         int src, dst, w;
@@ -19,10 +20,11 @@ public:
     void addEdge(int x, int y, int w);
     int getNodeCount();
     const std::vector<Edge>& getEdges();
-private:
+
+   private:
     int m_nodeCount;
-    std::vector<std::vector<int> > m_adj;
+    std::vector<std::vector<int>> m_adj;
     std::vector<Edge> m_edges;
 };
 
-#endif //GRAPH_H
+#endif  // GRAPH_H
