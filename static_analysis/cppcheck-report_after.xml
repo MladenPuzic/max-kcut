@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.14.2"/>
+    <errors>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 151 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="cmake-build-debug/CMakeFiles/3.28.1/CompilerIdC/CMakeCCompilerId.c" line="0" column="0"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 149 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="cmake-build-debug/CMakeFiles/3.28.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" line="0" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/Graph.h" line="8" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/Individual.h" line="8" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;random&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;random&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/Individual.h" line="9" column="0"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Individual::m_fitness&apos; is not initialized in the constructor." verbose="Member variable &apos;Individual::m_fitness&apos; is not initialized in the constructor. Member variables of native types, pointers, or references are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior." cwe="398" inconclusive="true" file0="src/BruteForce.cpp">
+            <location file="src/Individual.h" line="14" column="5"/>
+            <symbol>Individual::m_fitness</symbol>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Individual::m_groups&apos; is not initialized in the constructor." verbose="Member variable &apos;Individual::m_groups&apos; is not initialized in the constructor. Member variables of native types, pointers, or references are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior." cwe="398" inconclusive="true" file0="src/BruteForce.cpp">
+            <location file="src/Individual.h" line="14" column="5"/>
+            <symbol>Individual::m_groups</symbol>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Individual::m_graph&apos; is not initialized in the constructor." verbose="Member variable &apos;Individual::m_graph&apos; is not initialized in the constructor. Member variables of native types, pointers, or references are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior." cwe="398" inconclusive="true" file0="src/BruteForce.cpp">
+            <location file="src/Individual.h" line="14" column="5"/>
+            <symbol>Individual::m_graph</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Graph&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Graph&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="src/BruteForce.cpp">
+            <location file="src/Graph.h" line="12" column="5"/>
+            <symbol>Graph</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;BruteForce&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;BruteForce&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="src/BruteForce.cpp">
+            <location file="src/BruteForce.h" line="13" column="5"/>
+            <symbol>BruteForce</symbol>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/GAIndividual.h" line="8" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;random&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;random&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/GAIndividual.h" line="9" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;algorithm&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;algorithm&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/GeneticAlgorithm.cpp" line="6" column="0"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;GeneticAlgorithm&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;GeneticAlgorithm&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="src/GeneticAlgorithm.cpp">
+            <location file="src/GeneticAlgorithm.h" line="13" column="5"/>
+            <symbol>GeneticAlgorithm</symbol>
+        </error>
+        <error id="constParameterPointer" severity="style" msg="Parameter &apos;excl&apos; can be declared as pointer to const" verbose="Parameter &apos;excl&apos; can be declared as pointer to const" cwe="398" file0="src/GeneticAlgorithm.cpp">
+            <location file="src/GeneticAlgorithm.cpp" line="12" column="115" info="Parameter &apos;excl&apos; can be declared as pointer to const"/>
+            <symbol>excl</symbol>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;Graph::getNodeCount&apos; can be const." verbose="The member function &apos;Graph::getNodeCount&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true" file0="src/Graph.cpp">
+            <location file="src/Graph.h" line="20" column="9"/>
+            <location file="src/Graph.cpp" line="22" column="12"/>
+            <symbol>Graph::getNodeCount</symbol>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;Graph::getEdges&apos; can be const." verbose="The member function &apos;Graph::getEdges&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true" file0="src/Graph.cpp">
+            <location file="src/Graph.h" line="21" column="30"/>
+            <location file="src/Graph.cpp" line="26" column="40"/>
+            <symbol>Graph::getEdges</symbol>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;random&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;random&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/Greedy.h" line="8" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/Greedy.h" line="9" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;algorithm&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;algorithm&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/Greedy.cpp" line="7" column="0"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Greedy&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Greedy&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="src/Greedy.cpp">
+            <location file="src/Greedy.h" line="14" column="5"/>
+            <symbol>Greedy</symbol>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;algorithm&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;algorithm&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/Individual.cpp" line="6" column="0"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="src/Individual.cpp">
+            <location file="src/Individual.cpp" line="20" column="23"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;random&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;random&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/SimmulatedAnnealing.h" line="8" column="0"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;SimmulatedAnnealing&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;SimmulatedAnnealing&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="src/SimmulatedAnnealing.cpp">
+            <location file="src/SimmulatedAnnealing.h" line="13" column="5"/>
+            <symbol>SimmulatedAnnealing</symbol>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/main.cpp" line="1" column="0"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 151 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="testgen/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdC/CMakeCCompilerId.c" line="0" column="0"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 149 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="testgen/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" line="0" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="testgen/main.cpp" line="1" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;random&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;random&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="testgen/main.cpp" line="2" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;ctime&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;ctime&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="testgen/main.cpp" line="3" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;fstream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;fstream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="testgen/main.cpp" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="testgen/main.cpp" line="5" column="0"/>
+        </error>
+        <error id="checkersReport" severity="information" msg="Active checkers: 178/802 (use --checkers-report=&lt;filename&gt; to see details)" verbose="Active checkers: 178/802 (use --checkers-report=&lt;filename&gt; to see details)"/>
+    </errors>
+</results>

@@ -18,7 +18,7 @@ public:
     };
     void addEdge(int x, int y, int w);
     int getNodeCount();
-    std::vector<Edge> getEdges();
+    const std::vector<Edge>& getEdges();
 private:
     int m_nodeCount;
     std::vector<std::vector<int> > m_adj;

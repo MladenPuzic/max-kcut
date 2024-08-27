@@ -6,7 +6,7 @@
 #define GREEDY_H
 
 #include <random>
-
+#include <vector>
 #include "Graph.h"
 
 class Greedy {

@@ -51,7 +51,7 @@ void genSmallGraph(int tc, std::mt19937 rnd) {
     m = std::uniform_int_distribution<int>(4*n, n*(n-1)/2)(rnd);
     auto rnd_node = std::uniform_int_distribution<int>(0, n-1);
     auto rnd_weight = std::uniform_int_distribution<int>(1, 100);
-    out << n << ' ' << m << ' ' << k << std::endl;
+    out << n << ' ' << m << ' ' << k << '\n';
     std::vector<std::vector<int> > cst(n, std::vector<int>(n));
     for (int i = 1; i <= m; i++) {
         int x, y;
@@ -60,7 +60,7 @@ void genSmallGraph(int tc, std::mt19937 rnd) {
             y = rnd_node(rnd);
         } while (x == y || cst[x][y] != 0);
         cst[x][y] = cst[y][x] = rnd_weight(rnd);
-        out << x << ' ' << y << ' ' << cst[x][y] << std::endl;
+        out << x << ' ' << y << ' ' << cst[x][y] << '\n';
     }
     out.close();
 }
@@ -75,7 +75,7 @@ void genBigSparseGraph(int tc, std::mt19937 rnd) {
 
     auto rnd_node = std::uniform_int_distribution<int>(0, n-1);
     auto rnd_weight = std::uniform_int_distribution<int>(1, 10000);
-    out << n << ' ' << m << ' ' << k << std::endl;
+    out << n << ' ' << m << ' ' << k << '\n';
     std::vector<std::vector<int> > cst(n, std::vector<int>(n));
     for (int i = 1; i <= m; i++) {
         int x, y;
@@ -84,7 +84,7 @@ void genBigSparseGraph(int tc, std::mt19937 rnd) {
             y = rnd_node(rnd);
         } while (x == y || cst[x][y] != 0);
         cst[x][y] = cst[y][x] = rnd_weight(rnd);
-        out << x << ' ' << y << ' ' << cst[x][y] << std::endl;
+        out << x << ' ' << y << ' ' << cst[x][y] << '\n';
     }
     out.close();
 }
@@ -99,7 +99,7 @@ void genBigGraphSmallK(int tc, std::mt19937 rnd) {
 
     auto rnd_node = std::uniform_int_distribution<int>(0, n-1);
     auto rnd_weight = std::uniform_int_distribution<int>(1, 10000);
-    out << n << ' ' << m << ' ' << k << std::endl;
+    out << n << ' ' << m << ' ' << k << '\n';
     std::vector<std::vector<int> > cst(n, std::vector<int>(n));
     for (int i = 1; i <= m; i++) {
         int x, y;
@@ -108,7 +108,7 @@ void genBigGraphSmallK(int tc, std::mt19937 rnd) {
             y = rnd_node(rnd);
         } while (x == y || cst[x][y] != 0);
         cst[x][y] = cst[y][x] = rnd_weight(rnd);
-        out << x << ' ' << y << ' ' << cst[x][y] << std::endl;
+        out << x << ' ' << y << ' ' << cst[x][y] << '\n';
     }
     out.close();
 }
@@ -123,7 +123,7 @@ void genBigGraphBigK(int tc, std::mt19937 rnd) {
 
     auto rnd_node = std::uniform_int_distribution<int>(0, n-1);
     auto rnd_weight = std::uniform_int_distribution<int>(1, 10000);
-    out << n << ' ' << m << ' ' << k << std::endl;
+    out << n << ' ' << m << ' ' << k << '\n';
     std::vector<std::vector<int> > cst(n, std::vector<int>(n));
     for (int i = 1; i <= m; i++) {
         int x, y;
@@ -132,7 +132,7 @@ void genBigGraphBigK(int tc, std::mt19937 rnd) {
             y = rnd_node(rnd);
         } while (x == y || cst[x][y] != 0);
         cst[x][y] = cst[y][x] = rnd_weight(rnd);
-        out << x << ' ' << y << ' ' << cst[x][y] << std::endl;
+        out << x << ' ' << y << ' ' << cst[x][y] << '\n';
     }
     out.close();
 }

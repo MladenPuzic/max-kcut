@@ -7,18 +7,17 @@
 
 #include <vector>
 #include <random>
-#include <ctime>
 #include "Graph.h"
 
 class Individual {
 public:
     Individual() {}
-    Individual(Graph *g, int groups, bool rnd) {
-        m_graph = g;
-        m_groups = groups;
-        m_fitness = 0;
-
-        m_chooseGroup = std::uniform_int_distribution<int>(0, groups-1);
+    Individual(Graph *g, int groups, bool rnd) :
+        m_fitness(0),
+        m_groups(groups),
+        m_graph(g),
+        m_chooseGroup(std::uniform_int_distribution<int>(0, groups-1))
+    {
         if (rnd) {
             generateSplit();
         } else {
