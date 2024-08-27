@@ -9,14 +9,15 @@
 #include "Individual.h"
 
 class BruteForce {
-public:
-    BruteForce(int k = 1, Graph *g = nullptr) {
+   public:
+    BruteForce(int k = 1, Graph* g = nullptr) {
         m_groups = k;
         m_graph = g;
     }
 
     long long run();
-private:
+
+   private:
     void checkAllOptions(int idx);
     int m_groups;
     Individual m_cur;
@@ -24,4 +25,4 @@ private:
     Graph* m_graph;
 };
 
-#endif //BRUTEFORCE_H
+#endif  // BRUTEFORCE_H

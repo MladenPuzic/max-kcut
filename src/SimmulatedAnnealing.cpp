@@ -3,6 +3,7 @@
 //
 
 #include "SimmulatedAnnealing.h"
+
 #include "Individual.h"
 
 long long SimmulatedAnnealing::run(int iter) {

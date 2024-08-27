@@ -6,25 +6,26 @@
 #define GREEDY_H
 
 #include <random>
+#include <vector>
 
 #include "Graph.h"
 
 class Greedy {
-public:
-    Greedy(int k, Graph *g = nullptr) {
+   public:
+    Greedy(int k, Graph* g = nullptr) {
         m_groups = k;
         m_graph = g;
-        m_rnd.seed(time(nullptr));
+        std::random_device rd;
+        m_rnd.seed(rd());
     }
 
     long long runFirstImprovement(int iter);
     long long runBestImprovement(int iter);
-private:
+
+   private:
     int m_groups;
     std::mt19937 m_rnd;
     Graph* m_graph;
 };
 
-
-
-#endif //GREEDY_H
+#endif  // GREEDY_H

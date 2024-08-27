@@ -19,10 +19,6 @@ void Graph::addEdge(int x, int y, int w) {
     m_edges.push_back({x, y, w});
 }
 
-int Graph::getNodeCount() {
-    return m_nodeCount;
-}
+int Graph::getNodeCount() { return m_nodeCount; }
 
-std::vector<Graph::Edge> Graph::getEdges() {
-    return m_edges;
-}
+const std::vector<Graph::Edge>& Graph::getEdges() { return m_edges; }

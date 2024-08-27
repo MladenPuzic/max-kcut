@@ -4,6 +4,8 @@
 
 #include "Greedy.h"
 
+#include <algorithm>
+
 #include "Individual.h"
 
 long long Greedy::runBestImprovement(int iter) {
@@ -46,7 +48,7 @@ long long Greedy::runFirstImprovement(int iter) {
         for (int i = 0; i < perm.size(); i++) {
             perm[i] = i;
         }
-        shuffle(perm.begin(), perm.end(), m_rnd);
+        std::shuffle(perm.begin(), perm.end(), m_rnd);
 
         for (auto idx : perm) {
             int st = cur.m_split[idx];
@@ -69,4 +71,3 @@ long long Greedy::runFirstImprovement(int iter) {
     }
     return cur.getFitness(true);
 }
-

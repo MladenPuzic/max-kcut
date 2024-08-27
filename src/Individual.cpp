@@ -4,6 +4,8 @@
 
 #include "Individual.h"
 
+#include <algorithm>
+
 long long Individual::getFitness(bool recalc) {
     if (recalc) {
         updateFitness();
@@ -39,7 +41,8 @@ void Individual::generateSplit() {
 void Individual::smallChange() {
     std::random_device rd;
     std::mt19937 rnd(rd());
-    int rnd_idx = std::uniform_int_distribution<int>(0, m_split.size()-1)(rnd);
+    int rnd_idx =
+        std::uniform_int_distribution<int>(0, m_split.size() - 1)(rnd);
     m_split[rnd_idx] = m_chooseGroup(rnd);
     updateFitness();
 }
