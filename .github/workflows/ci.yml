@@ -19,7 +19,7 @@ jobs:
       - name: Set up CMake
         uses: jwlawson/actions-setup-cmake@v1
         with:
-          cmake-version: '3.28.1'
+          cmake-version: '3.21.1'
 
       - name: Install dependencies
         run: sudo apt-get install -y cppcheck
@@ -41,3 +41,15 @@ jobs:
         with:
           name: cppcheck-report
           path: cppcheck-report.xml
+
+      - name: Create GitHub Issue on Failure
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "Build failed: ${{ github.workflow }}",
+              body: "The build for commit ${{ github.sha }} failed. Please investigate.",
+            })
