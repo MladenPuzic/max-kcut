@@ -44,10 +44,10 @@ jobs:
 
       - name: Create GitHub Issue on Failure
         if: failure()
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
-            github.issues.create({
+            github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: "Build failed: ${{ github.workflow }}",
