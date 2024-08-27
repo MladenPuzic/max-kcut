@@ -3,8 +3,10 @@
 //
 
 #include "Greedy.h"
-#include "Individual.h"
+
 #include <algorithm>
+
+#include "Individual.h"
 
 long long Greedy::runBestImprovement(int iter) {
     Individual cur = Individual(m_graph, m_groups, true);
@@ -69,4 +71,3 @@ long long Greedy::runFirstImprovement(int iter) {
     }
     return cur.getFitness(true);
 }
-

@@ -6,11 +6,12 @@
 #define SIMMULATEDANNEALING_H
 
 #include <random>
+
 #include "Graph.h"
 
 class SimmulatedAnnealing {
-public:
-    SimmulatedAnnealing(int k, Graph *g = nullptr) {
+   public:
+    SimmulatedAnnealing(int k, Graph* g = nullptr) {
         m_groups = k;
         m_graph = g;
         std::random_device rd;
@@ -18,10 +19,11 @@ public:
     }
 
     long long run(int iter);
-private:
+
+   private:
     int m_groups;
     std::mt19937 m_rnd;
     Graph* m_graph;
 };
 
-#endif //SIMMULATEDANNEALING_H
+#endif  // SIMMULATEDANNEALING_H

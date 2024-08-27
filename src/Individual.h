@@ -5,19 +5,19 @@
 #ifndef INDIVIDUAL_H
 #define INDIVIDUAL_H
 
-#include <vector>
 #include <random>
+#include <vector>
+
 #include "Graph.h"
 
 class Individual {
-public:
+   public:
     Individual() {}
-    Individual(Graph *g, int groups, bool rnd) :
-        m_fitness(0),
-        m_groups(groups),
-        m_graph(g),
-        m_chooseGroup(std::uniform_int_distribution<int>(0, groups-1))
-    {
+    Individual(Graph *g, int groups, bool rnd)
+        : m_fitness(0),
+          m_groups(groups),
+          m_graph(g),
+          m_chooseGroup(std::uniform_int_distribution<int>(0, groups - 1)) {
         if (rnd) {
             generateSplit();
         } else {
@@ -28,7 +28,8 @@ public:
     void smallChange();
     long long getFitness(bool recalc = false);
     std::vector<int> m_split;
-protected:
+
+   protected:
     void generateSplit();
     void updateFitness();
 
@@ -38,6 +39,4 @@ protected:
     std::uniform_int_distribution<int> m_chooseGroup;
 };
 
-
-
-#endif //INDIVIDUAL_H
+#endif  // INDIVIDUAL_H

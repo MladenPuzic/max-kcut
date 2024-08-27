@@ -14,7 +14,7 @@ void BruteForce::checkAllOptions(int idx) {
     }
     for (int opt = 0; opt < m_groups; opt++) {
         m_cur.m_split[idx] = opt;
-        checkAllOptions(idx+1);
+        checkAllOptions(idx + 1);
     }
 }
 
