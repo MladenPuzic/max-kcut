@@ -3,10 +3,10 @@ name: CMake Build and Cppcheck
 on:
   push:
     branches:
-      - main
+      - dev/mladenpuzic/ci
   pull_request:
     branches:
-      - main
+      - dev/mladenpuzic/ci
 
 jobs:
   build:
