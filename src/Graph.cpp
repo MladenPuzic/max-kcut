@@ -23,6 +23,6 @@ int Graph::getNodeCount() {
     return m_nodeCount;
 }
 
-std::vector<Graph::Edge> Graph::getEdges() {
+const std::vector<Graph::Edge>& Graph::getEdges() {
     return m_edges;
 }

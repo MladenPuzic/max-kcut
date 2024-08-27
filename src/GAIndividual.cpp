@@ -5,7 +5,7 @@
 #include "GAIndividual.h"
 
 GAIndividual GAIndividual::crossover(GAIndividual a, GAIndividual b, int position) {
-    GAIndividual child = a;
+    GAIndividual child = std::move(a);
     for (int i = position; i < child.m_split.size(); i++) {
         child.m_split[i] = b.m_split[i];
     }

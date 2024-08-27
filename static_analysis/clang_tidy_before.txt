@@ -1,0 +1,50 @@
+/Users/mladenp/Documents/github/max-kcut/src/GAIndividual.cpp:8:26: error: parameter 'a' is passed by value and only copied once; consider moving it to avoid unnecessary copies [performance-unnecessary-value-param,-warnings-as-errors]
+    6 | 
+    7 | GAIndividual GAIndividual::crossover(GAIndividual a, GAIndividual b, int position) {
+    8 |     GAIndividual child = a;
+      |                          ^
+      |                          std::move( )
+/Users/mladenp/Documents/github/max-kcut/src/main.cpp:24:47: error: do not use 'endl' with streams; use '\n' instead [performance-avoid-endl,-warnings-as-errors]
+   24 |     cout << ga.run(200, 100, 20, 10, 0.05) << endl;
+      |                                               ^~~~
+      |                                               '\n'
+/Users/mladenp/Documents/github/max-kcut/src/main.cpp:25:25: error: do not use 'endl' with streams; use '\n' instead [performance-avoid-endl,-warnings-as-errors]
+   25 |     cout << bf.run() << endl;
+      |                         ^~~~
+      |                         '\n'
+/Users/mladenp/Documents/github/max-kcut/src/main.cpp:26:83: error: do not use 'endl' with streams; use '\n' instead [performance-avoid-endl,-warnings-as-errors]
+   26 |     cout << gd.runBestImprovement(1000) << ' ' << gd.runFirstImprovement(1000) << endl;
+      |                                                                                   ^~~~
+      |                                                                                   '\n'
+/Users/mladenp/Documents/github/max-kcut/testgen/main.cpp:54:41: error: do not use 'std::endl' with streams; use '\n' instead [performance-avoid-endl,-warnings-as-errors]
+   54 |     out << n << ' ' << m << ' ' << k << std::endl;
+      |                                         ^~~~~~~~~
+      |                                         '\n'
+/Users/mladenp/Documents/github/max-kcut/testgen/main.cpp:63:53: error: do not use 'std::endl' with streams; use '\n' instead [performance-avoid-endl,-warnings-as-errors]
+   63 |         out << x << ' ' << y << ' ' << cst[x][y] << std::endl;
+      |                                                     ^~~~~~~~~
+      |                                                     '\n'
+/Users/mladenp/Documents/github/max-kcut/testgen/main.cpp:78:41: error: do not use 'std::endl' with streams; use '\n' instead [performance-avoid-endl,-warnings-as-errors]
+   78 |     out << n << ' ' << m << ' ' << k << std::endl;
+      |                                         ^~~~~~~~~
+      |                                         '\n'
+/Users/mladenp/Documents/github/max-kcut/testgen/main.cpp:87:53: error: do not use 'std::endl' with streams; use '\n' instead [performance-avoid-endl,-warnings-as-errors]
+   87 |         out << x << ' ' << y << ' ' << cst[x][y] << std::endl;
+      |                                                     ^~~~~~~~~
+      |                                                     '\n'
+/Users/mladenp/Documents/github/max-kcut/testgen/main.cpp:102:41: error: do not use 'std::endl' with streams; use '\n' instead [performance-avoid-endl,-warnings-as-errors]
+  102 |     out << n << ' ' << m << ' ' << k << std::endl;
+      |                                         ^~~~~~~~~
+      |                                         '\n'
+/Users/mladenp/Documents/github/max-kcut/testgen/main.cpp:111:53: error: do not use 'std::endl' with streams; use '\n' instead [performance-avoid-endl,-warnings-as-errors]
+  111 |         out << x << ' ' << y << ' ' << cst[x][y] << std::endl;
+      |                                                     ^~~~~~~~~
+      |                                                     '\n'
+/Users/mladenp/Documents/github/max-kcut/testgen/main.cpp:126:41: error: do not use 'std::endl' with streams; use '\n' instead [performance-avoid-endl,-warnings-as-errors]
+  126 |     out << n << ' ' << m << ' ' << k << std::endl;
+      |                                         ^~~~~~~~~
+      |                                         '\n'
+/Users/mladenp/Documents/github/max-kcut/testgen/main.cpp:135:53: error: do not use 'std::endl' with streams; use '\n' instead [performance-avoid-endl,-warnings-as-errors]
+  135 |         out << x << ' ' << y << ' ' << cst[x][y] << std::endl;
+      |                                                     ^~~~~~~~~
+      |                                                     '\n'
