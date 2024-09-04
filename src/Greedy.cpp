@@ -49,7 +49,6 @@ long long Greedy::runFirstImprovement(int iter) {
             perm[i] = i;
         }
         std::shuffle(perm.begin(), perm.end(), m_rnd);
-
         for (auto idx : perm) {
             int st = cur.m_split[idx];
             for (int nw = 0; nw < m_groups; nw++) {

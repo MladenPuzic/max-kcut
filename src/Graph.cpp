@@ -11,8 +11,6 @@ void Graph::addEdge(int x, int y, int w) {
     if (y < 0 || y >= m_nodeCount) {
         return;
     }
-    m_adj[x][y] += w;
-    m_adj[y][x] += w;
     if (x > y) {
         std::swap(x, y);
     }

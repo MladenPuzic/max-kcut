@@ -28,16 +28,16 @@ int main() {
 }
 
 void genSmallGraph(int tc, std::mt19937 rnd) {
-    // k = 5, n = 14 x 2
-    // k = 4, n = 16 x 1
-    // k = 3, n = 20 x 1
-    // k = 2, n = 33 x 1
+    // k = 5, n = 10 x 2
+    // k = 4, n = 12 x 1
+    // k = 3, n = 16 x 1
+    // k = 2, n = 20 x 1
     std::ofstream out;
     out.open(std::to_string(tc) + ".in");
     int n, m, k;
     if (tc <= 1) {
         k = 2;
-        n = 25;
+        n = 20;
     } else if (tc <= 2) {
         k = 3;
         n = 16;
