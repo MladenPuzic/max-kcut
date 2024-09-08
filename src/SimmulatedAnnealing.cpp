@@ -20,7 +20,7 @@ long long SimmulatedAnnealing::run(int iter) {
             }
         } else {
             int rnd = std::uniform_int_distribution<int>(1, idx)(m_rnd);
-            if (rnd == 1) {
+            if (rnd <= 100) {
                 cur = nw;
             }
         }
