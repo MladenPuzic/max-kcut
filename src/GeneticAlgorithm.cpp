@@ -13,10 +13,15 @@ bool GeneticAlgorithm::fitnessCmp(GAIndividual a, GAIndividual b) {
 GAIndividual GeneticAlgorithm::selection(std::vector<GAIndividual> &population,
                                          int tournamentSize,
                                          GAIndividual *excl) {
-    std::shuffle(population.begin(), population.end(), m_rnd);
-    GAIndividual max_individual = population[0];
+    std::vector<int> p;
+    for (int i = 0; i < population.size(); i++) {
+        p.push_back(i);
+    }
+    std::shuffle(p.begin(), p.end(), m_rnd);
+    GAIndividual max_individual = population[p[0]];
     long long max_fitness = -1;
-    for (int el = 0; el < tournamentSize; el++) {
+    for (int idx = 0; idx < tournamentSize; idx++) {
+        int el = p[idx];
         if (&population[el] != excl &&
             population[el].getFitness() > max_fitness) {
             max_fitness = population[el].getFitness();

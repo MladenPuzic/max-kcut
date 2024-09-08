@@ -4,11 +4,11 @@
 #include <random>
 #include <string>
 
-void genSmallGraph(int tc, std::mt19937 rnd);  // k^n <= 10^10
+void genSmallGraph(int tc, std::mt19937 &rnd);  // k^n <= 10^10
 void genBigSparseGraph(int tc,
-                       std::mt19937 rnd);  // n <= 200, m <= 200, k <= 20
-void genBigGraphSmallK(int tc, std::mt19937 rnd);  // n <= 200, k <= 5
-void genBigGraphBigK(int tc, std::mt19937 rnd);    //   n <= 200, k <= 20
+                       std::mt19937 &rnd);  // n <= 200, m <= 200, k <= 20
+void genBigGraphSmallK(int tc, std::mt19937 &rnd);  // n <= 200, k <= 5
+void genBigGraphBigK(int tc, std::mt19937 &rnd);    //   n <= 200, k <= 20
 
 int main() {
     std::mt19937 rnd(time(nullptr));
@@ -27,7 +27,7 @@ int main() {
     return 0;
 }
 
-void genSmallGraph(int tc, std::mt19937 rnd) {
+void genSmallGraph(int tc, std::mt19937 &rnd) {
     // k = 5, n = 10 x 2
     // k = 4, n = 12 x 1
     // k = 3, n = 16 x 1
@@ -65,7 +65,7 @@ void genSmallGraph(int tc, std::mt19937 rnd) {
     out.close();
 }
 
-void genBigSparseGraph(int tc, std::mt19937 rnd) {
+void genBigSparseGraph(int tc, std::mt19937 &rnd) {
     std::ofstream out;
     out.open(std::to_string(tc) + ".in");
     int n, m, k;
@@ -89,7 +89,7 @@ void genBigSparseGraph(int tc, std::mt19937 rnd) {
     out.close();
 }
 
-void genBigGraphSmallK(int tc, std::mt19937 rnd) {
+void genBigGraphSmallK(int tc, std::mt19937 &rnd) {
     std::ofstream out;
     out.open(std::to_string(tc) + ".in");
     int n, m, k;
@@ -114,7 +114,7 @@ void genBigGraphSmallK(int tc, std::mt19937 rnd) {
     out.close();
 }
 
-void genBigGraphBigK(int tc, std::mt19937 rnd) {
+void genBigGraphBigK(int tc, std::mt19937 &rnd) {
     std::ofstream out;
     out.open(std::to_string(tc) + ".in");
     int n, m, k;

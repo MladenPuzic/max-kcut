@@ -24,7 +24,7 @@ int main() {
     BruteForce bf(k, &g);
     Greedy gd(k, &g);
     SimmulatedAnnealing sa(k, &g);
-    cout << ga.run(200, 100, 20, 10, 0.1) << ", ";
+    cout << ga.run(200, 250, 20, 20, 0.1) << ", ";
     cout.flush();
     if (n <= 20) {
         cout << bf.run() << ", ";
@@ -33,9 +33,9 @@ int main() {
     }
 
     cout.flush();
-    cout << gd.runBestImprovement(10000) << ", " << gd.runFirstImprovement(10000) << ", ";
+    cout << gd.runBestImprovement(50000) << ", " << gd.runFirstImprovement(50000) << ", ";
     cout.flush();
-    cout << sa.run(10000) << '\n';
+    cout << sa.run(50000) << std::endl;
     return 0;
 }
 /*
